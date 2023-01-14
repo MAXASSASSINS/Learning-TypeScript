@@ -1,49 +1,38 @@
+// explicit types ---> used when we don't want to initialize the variable but we want to specify the type of the variable
+let character: string;
+let age: number;
+let isLoggedin: boolean;
+
+// age = 'shadab'; // error
+age = 13;
+
 // arrays
+let stringArray: string[] = []; // best to initialize with empty array
 
-let names = ['shadab', 'ali', 'ahmed'];
+stringArray = ['shadab', 'ali', 'ahmed'];
 
-// names = 'logan' // error 
-
-names.push('khan');
-// names.push(70); // error
-// names.push(true); // error
-
-
-// names[0] = 3; // error
-
-let mixedArray = ['shadab', 70, true];
-
-mixedArray.push('ali');
-mixedArray.push(70);
-mixedArray.push(false);
+// union types
+let mixedArray: (string | number | boolean)[] = []; // only need to put the type of the array in the parenthesis
+mixedArray.push('shadab');
+mixedArray.push(13);
+mixedArray.push(true);
 
 console.log(mixedArray);
-mixedArray[0] = 3;
-console.log(mixedArray);
+
+let id: string | number; // no need to put the type of the variable in the parenthesis
 
 
 // objects
+let shadab: object;
+shadab = { name: 'shadab', age: 20 }
+// shadab = ''; // error
+shadab = []; // no error as array is also an object
 
-let person = {
-    name: 'shadab',
-    age: 20,
-    gamer: true,
-}
+let shadab2: {
+    name: string,
+    age: number,
+    gamer: boolean
+};
 
-console.log(person);
-
-
-// person.name = 30; // error
-
-// similarly once the object is defined we can't add new properties to it
-// person.skills = ['coding', 'gaming']; // error
-
-person = {
-    name: 'ali',
-    age: 30,
-    gamer: false,
-}
-
-console.log(person);
-
-
+// shadab2 = {name: 'shadab', age: 20}; // error as gamer is missing
+shadab2 = {name: 'shadab', age: 20, gamer: true};
