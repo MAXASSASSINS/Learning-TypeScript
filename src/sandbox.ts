@@ -1,26 +1,16 @@
-let greet = () => {
-    console.log('Hello World');
+// type aliases
+type StringOrNum = string | number;
+type objWithName = { name: string, uid: StringOrNum };
+
+
+const logDetails = (uid: StringOrNum, item: string) => {
+    console.log(`${item} has a uid of ${uid}`);
 }
 
-// greet = 'shadab'; // error
-
-const display: Function = () => {
-    console.log('this is function');
+const greet = (user: { name: string, uid: StringOrNum }) => {
+    console.log(`${user.name} says hello`);
 }
 
-display();
-
-const add = (a: number, b: number, c?: number | string ) => {
-    console.log(a + b );
-    console.log(c); 
-    
+const greetAgain = (user: objWithName) => {
+    console.log(`${user.name} says hello`);
 }
-
-add(2, 45);
-
-const subtract = (a: number, b: number = 0): number => {
-    return a - b;
-}
-
-let subans = subtract(10, 5); // this will infer the return type of subtract which is number so subans will be number
-console.log(subans);
