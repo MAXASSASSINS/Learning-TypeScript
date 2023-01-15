@@ -1,8 +1,19 @@
 "use strict";
-let age = 25;
-console.log(age);
-age = true;
-console.log(age);
-age = 'shadab';
-console.log(age);
-age = { name: 'shadab' };
+let greet = () => {
+    console.log('Hello World');
+};
+// greet = 'shadab'; // error
+const display = () => {
+    console.log('this is function');
+};
+display();
+const add = (a, b, c) => {
+    console.log(a + b);
+    console.log(c);
+};
+add(2, 45);
+const subtract = (a, b = 0) => {
+    return a - b;
+};
+let subans = subtract(10, 5); // this will infer the return type of subtract which is number so subans will be number
+console.log(subans);
