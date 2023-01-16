@@ -15,10 +15,18 @@ form.addEventListener('submit', (e) => {
 });
 // Classes
 class Invoice {
-    constructor(n, d, a) {
-        this.name = n;
-        this.details = d;
-        this.amount = a;
+    // readonly name: string
+    // private details: string
+    // public amount: number
+    // constructor(n: string, d: string, a: number){
+    //     this.name = n;
+    //     this.details = d;
+    //     this.amount = a;
+    // }
+    constructor(name, details, amount) {
+        this.name = name;
+        this.details = details;
+        this.amount = amount;
     }
     format() {
         return `${this.name} owes $${this.amount} for ${this.details}`;
@@ -32,5 +40,8 @@ let invoices = [];
 invoices.push(inv1);
 invoices.push(inv2);
 console.log(invoices);
-inv1.name = 'max';
+// inv1.name = 'max'; // error because name is readonly but you can this inside any class method
 console.log(inv1);
+invoices.forEach(inv => {
+    console.log(inv.name, inv.amount, inv.format());
+});
