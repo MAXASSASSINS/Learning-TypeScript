@@ -1,3 +1,5 @@
+import { Invoice } from './classes/Invoice.js';
+
 const anchor = document.querySelector('a')!; // ! is a non-null assertion operator means that we are sure that the element is not null
 
 console.log(anchor.href);
@@ -25,29 +27,6 @@ form.addEventListener('submit', (e: Event) => {
 });
 
 // Classes
-class Invoice {
-    // readonly name: string
-    // private details: string
-    // public amount: number
-
-    // constructor(n: string, d: string, a: number){
-    //     this.name = n;
-    //     this.details = d;
-    //     this.amount = a;
-    // }
-
-    constructor(
-        readonly name: string,
-        private details: string,
-        public amount: number
-    ){}
-
-
-    format() {
-        return `${this.name} owes $${this.amount} for ${this.details}`
-    }
-
-}
 
 const inv1 = new Invoice('shadab', 'work on the website', 1000);
 const inv2 = new Invoice('mario', 'work on the website', 400);
