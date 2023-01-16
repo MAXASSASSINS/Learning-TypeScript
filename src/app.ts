@@ -24,3 +24,36 @@ form.addEventListener('submit', (e: Event) => {
     );
 });
 
+// Classes
+class Invoice{
+    name: string
+    details: string
+    amount: number
+
+    constructor(n: string, d: string, a: number){
+        this.name = n;
+        this.details = d;
+        this.amount = a;
+    }
+
+    format(){
+        return `${this.name} owes $${this.amount} for ${this.details}`
+    }
+
+}
+
+const inv1 = new Invoice('shadab', 'work on the website', 1000);
+const inv2 = new Invoice('mario', 'work on the website', 400);
+
+console.log(inv1, inv2);
+
+let invoices: Invoice[] = [];
+// invoices.push('hello'); // error
+invoices.push(inv1);
+invoices.push(inv2);
+console.log(invoices);
+
+inv1.name = 'max';
+console.log(inv1);
+ 
+
