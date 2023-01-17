@@ -1,3 +1,12 @@
+import { Invoice } from './classes/Invoice.js';
+import { Payment } from './classes/Payment.js';
+let docOne;
+let docTwo;
+docOne = new Invoice('shadab', 'web dev', 1250);
+docTwo = new Payment('saba', 'dev ops', 2000);
+let docs = [];
+docs.push(docOne);
+docs.push(docTwo);
 const me = {
     name: 'shadab',
     age: 20,
@@ -14,7 +23,6 @@ let someone;
 const greetPerson = (person) => {
     console.log('hello', person.name);
 };
-import { Invoice } from './classes/Invoice.js';
 const anchor = document.querySelector('a'); // ! is a non-null assertion operator means that we are sure that the element is not null
 console.log(anchor.href);
 // const form  =  document.querySelector('form');
@@ -27,6 +35,13 @@ const details = document.querySelector('#details');
 const amount = document.querySelector('#amount');
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+    let doc;
+    if (type.value === 'invoice') {
+        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+    }
+    else {
+        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+    }
     console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
 });
 // Classes

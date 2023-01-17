@@ -1,3 +1,19 @@
+import { Invoice } from './classes/Invoice.js';
+import { Payment } from './classes/Payment.js';
+import { HasFormatter } from './interfaces/HasFormatter.js';
+
+let docOne: HasFormatter;
+let docTwo: HasFormatter;
+
+docOne = new Invoice('shadab', 'web dev', 1250);
+docTwo = new Payment('saba', 'dev ops', 2000);
+
+let docs: HasFormatter[] = [];
+docs.push(docOne);
+docs.push(docTwo);
+
+
+
 // interfaces
 interface IsPerson {
     name: string;
@@ -31,7 +47,6 @@ const greetPerson = (person: IsPerson) => {
 
 
 
-import { Invoice } from './classes/Invoice.js';
 
 const anchor = document.querySelector('a')!; // ! is a non-null assertion operator means that we are sure that the element is not null
 
@@ -50,6 +65,16 @@ const amount = document.querySelector('#amount') as HTMLInputElement;
 
 form.addEventListener('submit', (e: Event) => {
     e.preventDefault();
+
+    let doc: HasFormatter;
+    if (type.value === 'invoice') {
+        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+    } else {
+        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+    }
+
+    
+
 
     console.log(
         type.value,

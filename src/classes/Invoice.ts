@@ -1,4 +1,7 @@
-export class Invoice {
+import { HasFormatter } from '../interfaces/HasFormatter.js'
+
+
+export class Invoice implements HasFormatter {
     // readonly name: string
     // private details: string
     // public amount: number
@@ -13,7 +16,7 @@ export class Invoice {
         readonly name: string,
         private details: string,
         public amount: number
-    ){}
+    ) { }
 
 
     format() {
@@ -21,3 +24,5 @@ export class Invoice {
     }
 
 }
+
+
