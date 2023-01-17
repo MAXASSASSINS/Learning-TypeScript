@@ -1,3 +1,19 @@
+const me = {
+    name: 'shadab',
+    age: 20,
+    speak(text) {
+        console.log(text);
+    },
+    spend(amount) {
+        console.log('I spent', amount);
+        return amount;
+    }
+};
+console.log(me);
+let someone;
+const greetPerson = (person) => {
+    console.log('hello', person.name);
+};
 import { Invoice } from './classes/Invoice.js';
 const anchor = document.querySelector('a'); // ! is a non-null assertion operator means that we are sure that the element is not null
 console.log(anchor.href);

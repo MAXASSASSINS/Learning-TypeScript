@@ -1,3 +1,36 @@
+// interfaces
+interface IsPerson {
+    name: string;
+    age: number;
+    speak(a: string): void;
+    spend(a: number): number;
+}
+
+const me: IsPerson = {
+    name: 'shadab',
+    age: 20,
+    speak(text: string): void {
+        console.log(text);
+    },
+    spend(amount: number): number {
+        console.log('I spent', amount);
+        return amount;
+    }
+}
+
+console.log(me);
+
+let someone: IsPerson;
+
+const greetPerson = (person: IsPerson) => {
+    console.log('hello', person.name);
+}
+
+
+
+
+
+
 import { Invoice } from './classes/Invoice.js';
 
 const anchor = document.querySelector('a')!; // ! is a non-null assertion operator means that we are sure that the element is not null
